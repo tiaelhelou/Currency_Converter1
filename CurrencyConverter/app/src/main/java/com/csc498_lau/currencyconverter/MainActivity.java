@@ -2,7 +2,7 @@
  *                                                                                 *
  * Name: Tia El Helou                                                              *
  * Id: 202002154                                                                   *
- * course: CSC498                                                                  *
+ * course: CSC498G                                                                 *
  * Date Last Modified: 4/2/2022                                                    *
  * Program Description: An android app that convert USD to LBP and vice versa.     *
  *                      Note that 1$ = 22,000 LBP rate                             *
