@@ -48,5 +48,12 @@ public class MainActivity extends AppCompatActivity {
 
             Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
         }
+        else if ( (input_lbp_string.equals("") || input_lbp_string.equals("0")) && (input_usd_string.equals("0") || input_usd_string.equals("")) ) {
+            Toast.makeText(getApplicationContext(), "You need to enter a number in one of the fields above!", Toast.LENGTH_LONG).show();
+        }
+
+        else {
+            Toast.makeText(getApplicationContext(), "Please enter a number in only one of the fields above!", Toast.LENGTH_LONG).show();
+        }
     }
 }
