@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText usd;
     EditText lbp;
+    TextView output;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         usd = (EditText) findViewById(R.id.usd);
         lbp = (EditText) findViewById(R.id.lbp);
+        output = (TextView) findViewById(R.id.output);
     }
 
     public void convert (View v) {
@@ -37,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
                 String result = input_usd + " USD = " + usd_to_lbp + " LBP";
 
-                Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
+                output.setText(result);
             }
 
             else if ( (input_usd_string.equals("") || input_usd_string.equals("0")) && (!input_lbp_string.equals("") && !input_lbp_string.equals("0")) ) {
@@ -48,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
                 String result = input_lbp + " LBP = " + lbp_to_usd + " USD";
 
-                Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
+                output.setText(result);
             }
 
             else if ( (input_lbp_string.equals("") || input_lbp_string.equals("0")) && (input_usd_string.equals("0") || input_usd_string.equals("")) ) {
@@ -59,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Please enter a number in only one of the fields above!", Toast.LENGTH_LONG).show();
             }
 
-        } catch (Exception e){
+        } catch (Exception e) {
             Toast.makeText(getApplicationContext(), "Please enter a valid number!", Toast.LENGTH_LONG).show();
         }
     }
