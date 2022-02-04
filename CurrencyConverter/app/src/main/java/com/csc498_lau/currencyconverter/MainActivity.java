@@ -27,33 +27,40 @@ public class MainActivity extends AppCompatActivity {
         String input_usd_string = usd.getText().toString();
         String input_lbp_string = lbp.getText().toString();
 
-        if ( (input_lbp_string.equals("") || input_lbp_string.equals("0")) && (!input_usd_string.equals("") && !input_usd_string.equals("0")) ) {
+        try {
 
-            int input_usd = Integer.parseInt(input_usd_string);
+            if ( (input_lbp_string.equals("") || input_lbp_string.equals("0")) && (!input_usd_string.equals("") && !input_usd_string.equals("0")) ) {
 
-            int usd_to_lbp = input_usd * 22000;
+                int input_usd = Integer.parseInt(input_usd_string);
 
-            String result = input_usd + " USD = " + usd_to_lbp + " LBP";
+                int usd_to_lbp = input_usd * 22000;
 
-            Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
-        }
+                String result = input_usd + " USD = " + usd_to_lbp + " LBP";
 
-        else if ( (input_usd_string.equals("") || input_usd_string.equals("0")) && (!input_lbp_string.equals("") && !input_lbp_string.equals("0")) ) {
+                Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
+            }
 
-            int input_lbp = Integer.parseInt(input_lbp_string);
+            else if ( (input_usd_string.equals("") || input_usd_string.equals("0")) && (!input_lbp_string.equals("") && !input_lbp_string.equals("0")) ) {
 
-            int lbp_to_usd = input_lbp / 22000;
+                int input_lbp = Integer.parseInt(input_lbp_string);
 
-            String result = input_lbp + " LBP = " + lbp_to_usd + " USD";
+                int lbp_to_usd = input_lbp / 22000;
 
-            Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
-        }
-        else if ( (input_lbp_string.equals("") || input_lbp_string.equals("0")) && (input_usd_string.equals("0") || input_usd_string.equals("")) ) {
-            Toast.makeText(getApplicationContext(), "You need to enter a number in one of the fields above!", Toast.LENGTH_LONG).show();
-        }
+                String result = input_lbp + " LBP = " + lbp_to_usd + " USD";
 
-        else {
-            Toast.makeText(getApplicationContext(), "Please enter a number in only one of the fields above!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
+            }
+
+            else if ( (input_lbp_string.equals("") || input_lbp_string.equals("0")) && (input_usd_string.equals("0") || input_usd_string.equals("")) ) {
+                Toast.makeText(getApplicationContext(), "You need to enter a number in one of the fields above!", Toast.LENGTH_LONG).show();
+            }
+
+            else {
+                Toast.makeText(getApplicationContext(), "Please enter a number in only one of the fields above!", Toast.LENGTH_LONG).show();
+            }
+
+        } catch (Exception e){
+            Toast.makeText(getApplicationContext(), "Please enter a valid number!", Toast.LENGTH_LONG).show();
         }
     }
 }
