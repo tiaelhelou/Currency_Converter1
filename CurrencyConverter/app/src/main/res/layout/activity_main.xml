@@ -123,27 +123,6 @@
         app:layout_constraintVertical_bias="0.92"
         app:srcCompat="@drawable/lltall_400x400" />
 
-    <ImageView
-        android:id="@+id/convert_icon"
-        android:layout_width="63dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="133dp"
-        android:layout_marginEnd="70dp"
-        android:layout_marginBottom="254dp"
-        android:adjustViewBounds="false"
-        android:onClick="convert"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/lbp"
-        app:layout_constraintVertical_bias="0.285"
-        app:srcCompat="@drawable/converter_icon"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
-        tools:visibility="visible" />
-
     <TextView
         android:id="@+id/output"
         android:layout_width="375dp"
@@ -157,5 +136,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="60dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="128dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="67dp"
+        android:onClick="convert"
+        app:layout_constraintBottom_toTopOf="@+id/output"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/lbp"
+        app:srcCompat="@drawable/converter_icon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
